@@ -4,12 +4,12 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 1,
-    marginTop: 65,
+    marginTop: 45,
     marginLeft: 10,
   },
   categoryContainer: {
     paddingHorizontal: 10,
-    height: 80,
+    minHeight: 80,
     paddingVertical: 10,
   },
   categoryButton: {
@@ -41,16 +41,12 @@ export const styles = StyleSheet.create({
   },
 
   card: {
-    width: width * 0.4,
-    height: width * 0.55,
+   
     backgroundColor: "white",
     borderRadius: 15,
-    padding: width * 0.025,
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    elevation: 3,
-    gap: 4,
+    padding: width * 0.030,
+    gap: 10,
+    marginLeft:-5,
     marginRight: width * 0.04, 
   },
 

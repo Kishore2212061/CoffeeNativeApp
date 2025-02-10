@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     backgroundColor: "#131313",
     paddingTop: 0,
     marginTop: 28,
-    height: 290,
     position: "relative",
   },
   innerContainer: {
@@ -13,7 +12,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: 30,
+    marginTop: 39,
   },
   locationText: {
     fontSize: 14,
