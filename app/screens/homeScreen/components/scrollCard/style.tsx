@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 3,
     gap: 4,
-    marginRight: width * 0.04, // 4% of screen width
+    marginRight: width * 0.04, 
   },
 
   selectedCard: {
@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
   },
 
   image: {
-    width: width * 0.36, // Dynamic width for responsiveness
+    width: width * 0.36, 
     height: width * 0.27,
     borderRadius: 10,
   },
@@ -74,7 +74,7 @@ export const styles = StyleSheet.create({
 
   ratingText: {
     color: "#fff",
-    fontSize: width * 0.035, // Scales dynamically
+    fontSize: width * 0.035, 
     fontWeight: "bold",
   },
 
