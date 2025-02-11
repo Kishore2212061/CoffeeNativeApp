@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import { styles } from "./style";
+import Ionicons from "react-native-vector-icons/Ionicons";
 const HomeScreen = () => {
   return (
     <SafeAreaView
@@ -19,9 +20,14 @@ const HomeScreen = () => {
       >
         <View>
           <Text style={styles.locationText}>Location</Text>
+          <View style={{flexDirection:"row"}} >
           <Text style={styles.cityText}>
             Bilzen, Tanjungbalai
           </Text>
+          <TouchableOpacity >
+          <Ionicons name="chevron-down" size={20} color={"white"} />
+        </TouchableOpacity>
+        </View>
         </View>
         <TouchableOpacity onPress={() => console.log("Profile Clicked")}>
           <Image

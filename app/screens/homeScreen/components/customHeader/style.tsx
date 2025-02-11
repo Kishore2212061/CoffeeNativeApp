@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
+    marginRight: 5,
   },
   imageStyle: { width: 40, height: 40 },
   profileContainer: {

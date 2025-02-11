@@ -33,7 +33,6 @@ export const styles = StyleSheet.create({
   grid: {
     paddingHorizontal: width * 0.05,
     paddingBottom: height * 0.03,
-    paddingRight: width * 0.05,
     gap: width * 0.04,
     flexWrap: "wrap",
     flexDirection: "row",
@@ -45,9 +44,8 @@ export const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 15,
     padding: width * 0.030,
-    gap: 10,
-    marginLeft:-5,
-    marginRight: width * 0.04, 
+    gap: 5,
+    marginLeft:-7,
   },
 
   selectedCard: {
@@ -55,8 +53,8 @@ export const styles = StyleSheet.create({
   },
 
   image: {
-    width: width * 0.36, 
-    height: width * 0.27,
+    width: width * 0.4, 
+    height: width * 0.35,
     borderRadius: 10,
   },
 
@@ -75,17 +73,21 @@ export const styles = StyleSheet.create({
   },
 
   name: {
-    fontSize: width * 0.045,
+    marginLeft:6.5,
+    fontSize: width * 0.05,
     fontWeight: "bold",
     marginTop: width * 0.015,
   },
 
   description: {
+    marginLeft:6.5,
     fontSize: width * 0.035,
     color: "#777",
   },
 
   price: {
+    marginLeft:6.5,
+
     fontSize: width * 0.05,
     fontWeight: "bold",
     color: "#2F4B4E",
@@ -94,11 +96,11 @@ export const styles = StyleSheet.create({
   addButton: {
     backgroundColor: "#C67C4E",
     borderRadius: 10,
-    width: width * 0.08,
-    height: width * 0.08,
+    width: width * 0.09,
+    height: width * 0.09,
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: width * 0.12,
+    marginLeft: width * 0.13,
     marginTop: width * -0.005,
   },
 
