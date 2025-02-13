@@ -88,7 +88,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 15,
     borderColor: "#EEE",
-    marginTop: -10,
     backgroundColor: "#FFF",
   },
   priceLabel: {

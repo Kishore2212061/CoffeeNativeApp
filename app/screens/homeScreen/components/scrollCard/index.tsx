@@ -33,7 +33,6 @@ const CoffeeShopScreen = () => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] =
     useState<string>("Cappuccino");
-
   useEffect(() => {
     fetchCoffees();
     fetchProductCoffees();

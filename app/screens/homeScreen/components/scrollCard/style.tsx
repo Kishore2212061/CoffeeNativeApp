@@ -46,6 +46,7 @@ export const styles = StyleSheet.create({
     padding: width * 0.030,
     gap: 5,
     marginLeft:-7,
+    marginRight:8,
   },
 
   selectedCard: {

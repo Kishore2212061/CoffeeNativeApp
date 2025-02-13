@@ -4,6 +4,8 @@ import HomeScreen from "../screens/homeScreen/index";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomTabNavigator from "./bottomTap";
 import DetailsScreen from "../screens/productDetail/index";
+import OrderScreen from "../screens/orderDetail";
+import TrackOrder from "../screens/trackOrder";
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
@@ -20,6 +22,17 @@ const StackNavigation = () => {
           component={DetailsScreen}
           options={{ animation: "slide_from_bottom" }}
         ></Stack.Screen>
+           <Stack.Screen
+          name="Orders"
+          component={OrderScreen}
+          options={{ animation: "slide_from_bottom" }}
+        ></Stack.Screen>
+           <Stack.Screen
+          name="Track"
+          component={TrackOrder}
+          options={{ animation: "slide_from_bottom" }}
+        ></Stack.Screen>
+
       </Stack.Navigator>
     </NavigationContainer>
   );

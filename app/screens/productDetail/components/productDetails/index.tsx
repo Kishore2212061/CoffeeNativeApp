@@ -1,17 +1,45 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import FastImage from "react-native-fast-image";
 import { ScrollView } from "react-native-gesture-handler";
 import { styles } from "./style";
 import Icon from "react-native-vector-icons/FontAwesome";
-
+import { StackNavigationProp } from "@react-navigation/stack";
+import { useNavigation } from "@react-navigation/native";
+type RootStackParamList = {
+  Details: undefined;
+  Orders: {
+    id: string;
+    name: string;
+    type: string;
+    rating: number;
+    price: number;
+    nr: number;
+    description: string;
+  };
+};
+type NavigationProp = StackNavigationProp<RootStackParamList, "Details">;
 const ProductDetail = ({ route }: any) => {
+
+
+  const navigation = useNavigation<NavigationProp>();
   const { id, name, type, rating, description, price, nr } = route.params;
   const [selectedSize, setSelectedSize] = useState("M");
   const [expanded, setExpanded] = useState(false);
   const sentences = description.split(". ");
   const shortDescription =
     sentences.slice(0, 2).join(". ") + (sentences.length > 2 ? "..." : "");
+  const handleOrderPress = useCallback(() => {
+    navigation.push("Orders", {
+      id: String(id),
+      name: String(name),
+      type: String(type),
+      rating: Number(rating),
+      price: Number(price),
+      nr: Number(nr),
+      description: String(description),
+    });
+  }, [navigation, id, name, type, rating, price, nr, description]);
 
   return (
     <View style={styles.container}>
@@ -81,7 +109,9 @@ const ProductDetail = ({ route }: any) => {
           <Text style={styles.price}>$ {price}</Text>
         </View>
         <TouchableOpacity style={styles.buyButton}>
-          <Text style={styles.buyButtonText}>Buy Now</Text>
+          <Text style={styles.buyButtonText}
+            onPress={handleOrderPress}
+          >Buy Now</Text>
         </TouchableOpacity>
       </View>
     </View>
