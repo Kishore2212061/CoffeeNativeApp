@@ -9,7 +9,7 @@ interface Address {
 }
 
 interface DeliveryStore {
-  selected: "Deliver" | "Pick Up";
+  selected: "Deliver"| "Pick Up";
   address: Address;
   modalVisible: boolean;
   toggleSelection: () => void;

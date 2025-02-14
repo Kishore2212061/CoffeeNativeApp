@@ -2,16 +2,16 @@ import React, { useEffect } from "react";
 import { View, Text, TouchableOpacity, Animated, Modal, TextInput, Image } from "react-native";
 import useDeliveryStore from "../../../../store/useDeliveryStore";
 import { StyleSheet } from "react-native";
-import {styles} from "./style"
+import { styles } from "./style"
 const DeliveryToggle = () => {
-  const { 
-    selected, 
-    toggleSelection, 
-    modalVisible, 
-    setModalVisible, 
-    address, 
-    setAddress, 
-    getCurrentLocation 
+  const {
+    selected,
+    toggleSelection,
+    modalVisible,
+    setModalVisible,
+    address,
+    setAddress,
+    getCurrentLocation
   } = useDeliveryStore();
 
   const animatedValue = new Animated.Value(selected === "Deliver" ? 0 : 1);
@@ -21,15 +21,17 @@ const DeliveryToggle = () => {
   }, []);
 
   const handleToggle = () => {
-    const newValue = selected === "Deliver" ? 1 : 0;
+    
+    const newSelection = selected === "Deliver" ? "Pick Up" : "Deliver";
+    const newValue = newSelection === "Deliver" ? 0 : 1;
     Animated.timing(animatedValue, {
       toValue: newValue,
       duration: 200,
       useNativeDriver: false,
     }).start();
+
     toggleSelection();
   };
-
   const translateX = animatedValue.interpolate({
     inputRange: [0, 1],
     outputRange: [5, 150],
@@ -77,7 +79,7 @@ const DeliveryToggle = () => {
         <View style={styles.modalContainer}>
           <Text style={styles.modalTitle}>Edit Address</Text>
 
-          
+
           <TextInput
             style={styles.input}
             value={address.details}
