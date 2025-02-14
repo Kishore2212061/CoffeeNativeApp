@@ -20,8 +20,6 @@ type RootStackParamList = {
 };
 type NavigationProp = StackNavigationProp<RootStackParamList, "Details">;
 const ProductDetail = ({ route }: any) => {
-
-
   const navigation = useNavigation<NavigationProp>();
   const { id, name, type, rating, description, price, nr } = route.params;
   const [selectedSize, setSelectedSize] = useState("M");
@@ -109,9 +107,9 @@ const ProductDetail = ({ route }: any) => {
           <Text style={styles.price}>$ {price}</Text>
         </View>
         <TouchableOpacity style={styles.buyButton}>
-          <Text style={styles.buyButtonText}
-            onPress={handleOrderPress}
-          >Buy Now</Text>
+          <Text style={styles.buyButtonText} onPress={handleOrderPress}>
+            Buy Now
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -40,4 +40,11 @@ export const styles = StyleSheet.create({
     color: "white",
     marginLeft: 10,
   },
+  imageSize: {
+    width: "90%",
+    height: 160,
+    borderRadius: 15,
+    left: 20,
+    top: 30,
+  },
 });
