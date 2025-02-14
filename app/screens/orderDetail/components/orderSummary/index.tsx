@@ -21,7 +21,7 @@ const DeliveryToggle = () => {
   }, []);
 
   const handleToggle = () => {
-    
+
     const newSelection = selected === "Deliver" ? "Pick Up" : "Deliver";
     const newValue = newSelection === "Deliver" ? 0 : 1;
     Animated.timing(animatedValue, {

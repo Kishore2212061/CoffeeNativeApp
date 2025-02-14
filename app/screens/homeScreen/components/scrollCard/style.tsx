@@ -37,6 +37,7 @@ export const styles = StyleSheet.create({
     flexWrap: "wrap",
     flexDirection: "row",
     justifyContent: "space-between",
+  
   },
 
   card: {
@@ -45,8 +46,8 @@ export const styles = StyleSheet.create({
     borderRadius: 15,
     padding: width * 0.030,
     gap: 5,
-    marginLeft:-7,
-    marginRight:8,
+    marginLeft:-17,
+    marginRight:20,
   },
 
   selectedCard: {

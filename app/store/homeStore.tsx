@@ -1,21 +1,28 @@
 import { create } from "zustand";
 import { coffeeData } from "./dummyData";
 
-type HomeStore = {
-  coffees: {
-    id: number;
-    name: string;
-    type: string;
-    rating: number;
-    price: number;
-    nr: number;
-    description: string;
-  }[];
-  fetchCoffees: () => void;
+type Coffee = {
+  id: number;
+  name: string;
+  type: string;
+  rating: number;
+  price: number;
+  nr: number;
+  description: string;
 };
 
-export const useHomeStore = create<HomeStore>((set) => ({
+type HomeStore = {
+  coffees: Coffee[];
+  searchQuery: string;
+  fetchCoffees: () => void;
+  setSearchQuery: (query: string) => void;
+  filteredCoffees: () => Coffee[];
+};
+
+export const useHomeStore = create<HomeStore>((set, get) => ({
   coffees: [],
+  searchQuery: "",
+  
   fetchCoffees: () => {
     const filteredCoffees = coffeeData.map(
       ({ id, name, type, rating, price, number_of_ratings, description }) => ({
@@ -28,7 +35,16 @@ export const useHomeStore = create<HomeStore>((set) => ({
         description,
       })
     );
-
     set({ coffees: filteredCoffees });
+  },
+
+  setSearchQuery: (query) => set({ searchQuery: query }),
+
+  filteredCoffees: () => {
+    const { coffees, searchQuery } = get();
+    if (!searchQuery) return coffees;
+    return coffees.filter((coffee) =>
+      coffee.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
   },
 }));

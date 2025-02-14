@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
+const { width, height } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
   container: {
@@ -32,7 +33,7 @@ export const styles = StyleSheet.create({
     borderRadius: 15,
     padding: 12,
     marginHorizontal: 20,
-    marginTop: 20,
+    marginTop: 30,
   },
   textStyle: {
     flex: 1,
@@ -47,4 +48,21 @@ export const styles = StyleSheet.create({
     left: 20,
     top: 30,
   },
+  card: {
+    marginLeft: 20,
+    backgroundColor: "white",
+    padding: width * 0.030,
+    marginRight: 20,
+    marginTop: 10,
+    borderRadius: 15,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 12,
+  },
+
+  selectedCard: {
+    backgroundColor: "#FFE6D0",
+  },
+
 });

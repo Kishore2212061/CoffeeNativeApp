@@ -106,7 +106,6 @@ const CoffeeShopScreen = () => {
             </View>
           </TouchableOpacity>
         )}
-        nestedScrollEnabled={true}
       />
     </View>
   );
