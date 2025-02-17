@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
-import Map from "../../trackOrder/customHeader";
+import Map from "../customHeader/index";
 const Delivery = () => {
   return (
     <View style={styles.container}>

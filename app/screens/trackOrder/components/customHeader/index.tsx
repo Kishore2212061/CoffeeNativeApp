@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Image, StyleSheet } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import useDeliveryStore from "../../../store/useDeliveryStore";
+import useDeliveryStore from "../../../../store/useDeliveryStore";
 import { styles } from "./style";
 const MapScreen = () => {
   const navigation = useNavigation();
